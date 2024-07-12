@@ -19,6 +19,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <img src={require('../images/cb_nordic.jpg')} />
     </div>
   );
 }
