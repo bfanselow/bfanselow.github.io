@@ -1,16 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.f855e6bc.css",
-    "main.js": "/static/js/main.e4de62cb.js",
-    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
+    "main.js": "/static/js/main.97df2659.js",
     "static/media/cb_nordic.jpg": "/static/media/cb_nordic.e8b42ca25b2fd15f1b27.jpg",
     "index.html": "/index.html",
     "main.f855e6bc.css.map": "/static/css/main.f855e6bc.css.map",
-    "main.e4de62cb.js.map": "/static/js/main.e4de62cb.js.map",
-    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
+    "main.97df2659.js.map": "/static/js/main.97df2659.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.e4de62cb.js"
+    "static/js/main.97df2659.js"
   ]
 }
