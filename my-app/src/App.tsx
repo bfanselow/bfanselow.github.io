@@ -1,27 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-        
-// <img src={logo} className="App-logo" alt="logo" />
+import { FC, Fragment } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
+import { CssBaseline } from "@mui/material";
+
+import Navbar from "./components/Navbar";
+import LandingPage from "./pages/LandingPage";
+import NotFound from "./pages/NotFound";
+
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={require('./images/cb_nordic.jpg')} />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Fragment>
+          <CssBaseline />
+          <BrowserRouter>
+              <Navbar />
+              <Routes>
+                  <Route path="/" element={<LandingPage />} />
+                  <Route element={<NotFound />} />
+              </Routes>
+          </BrowserRouter>
+      </Fragment>
   );
 }
 
