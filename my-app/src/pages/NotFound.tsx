@@ -1,7 +1,7 @@
 import React, { FC, Fragment, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { Container, Paper, Theme, Typography } from "@mui/material";
+import { Container, Paper, Typography } from "@mui/material";
 
 import { useTitle } from "../hooks/TitleContext";
 

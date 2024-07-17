@@ -1,45 +1,38 @@
-import React, { FC, useEffect } from "react";
-
-import { Container, Paper, Theme } from "@mui/material";
-
-/**
- * 
-const useStyles = makeStyles((theme: Theme) => ({
-    root: {
-        padding: theme.spacing(3, 2),
-    },
-    title: {
-        textAlign: "center",
-        paddingBottom: "40px",
-    },
-    body: {
-        paddingLeft: "10%",
-        paddingRight: "10%",
-        paddingBottom: "15px",
-    },
-    navigationList: {
-        listStylePosition: "inside",
-    },
-    pages: {
-        listStyleType: "none",
-    },
-    logo: {
-        height: theme.spacing(30),
-        width: theme.spacing(30),
-        display: "block",
-        margin: "0 auto",
-    },
-}));
- */
+import  { FC } from "react";
+import { Box, Card, CardMedia, Typography } from "@mui/material";
 
 const LandingPage: FC = () => {
 
     return (
-        <Container fixed>
-            <Paper>
-                <img src="/images/cb_nordic.jpg" alt="cb_nordic" />
-            </Paper>
-        </Container>
+        <Card sx={{ width: "100vw", height: "100vh", backgroundColor: "#333A3F" }}>
+            <Box>
+                <CardMedia
+                    sx={{ overflow: "hidden" }}
+                    component="img"
+                    height="100%"
+                    width="100%"
+                    image="/images/cb_nordic.jpg"
+                />
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: 200,
+                    left: 200,
+                    width: '50%',
+                    color: 'white',
+                    textShadow: '3px 3px 3px rgba(51, 51, 51, 0.90)',
+                    padding: '15px',
+                }}
+            >
+                <Typography variant="h5">
+                "If you want your children to be intelligent, read them fairy tales. If you want them to be more intelligent, read them more fairy tales."
+                </Typography>
+                <Typography variant="h6">
+                ~Albert Einstein
+                </Typography>
+            </Box>
+        </Box>
+        </Card>
     );
 };
 

@@ -1,213 +1,113 @@
-import React, { FC, useMemo } from "react";
-import { useLocation } from "react-router-dom";
+import React, { FC, useState } from 'react'
+import { Outlet, NavLink } from "react-router-dom";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import { CssBaseline } from '@mui/material';
+import styled from '@emotion/styled';
 
-import { Launch as LaunchIcon } from "@mui/icons-material";
-import { AppBar, Button, Menu, MenuItem, Theme, Toolbar, useMediaQuery, useTheme } from "@mui/material";
 
-import { HistoryLink } from "../utils/Links";
+const pages = [
+    { title: "Home", path: "/" },
+    { title: "About", path: "/about" },
+    { title: "Contact", path: "/contact" },
+  ];
 
-export const NavbarHeight = 6.5;
 
-/** 
-const useStyles = makeStyles((theme: Theme) => ({
-    navbarHeight: {
-        height: theme.spacing(NavbarHeight),
-        minHeight: theme.spacing(NavbarHeight), // needed to overwrite minheight values set in the theme
-    },
-    link: {
-        display: "flex",
-        color: theme.palette.primary.contrastText,
-    },
-    logo: {
-        paddingRight: theme.spacing(2),
-        height: theme.spacing(NavbarHeight),
-        width: theme.spacing(NavbarHeight),
-        color: "white",
-    },
-    item: {
-        flexGrow: 1,
-        display: "flex",
-        alignItems: "center",
-    },
-    navbarItem: {
-        color: theme.palette.text.primary,
-        "&:hover": {
-            textDecoration: "none",
-        },
-    },
-    navbarButton: {
-        whiteSpace: "nowrap",
-        margin: "0 2px",
-        color: "white",
-    },
-    navbarSelected: {
-        height: theme.spacing(NavbarHeight),
-        display: "flex",
-        alignItems: "center",
-        boxSizing: "border-box",
-        borderBottom: `3px solid white`,
-        borderTop: "3px solid transparent",
-    },
-}));
- */
+const ActiveLink = styled(NavLink)({
+    '&.active': {
+        fontWeight: "fontWeightBold",
+        textDecoration: "underline",
+    }
+});
+  
+const Layout: FC = () => {
+    const [anchorElNav, setAnchorElNav] = useState(null);
 
-interface NavbarItems {
-    name: string;
-    link: string;
-    external?: boolean;
+    const handleOpenNavMenu = (event: any) => {
+        console.log('opening' + event);
+        console.log(event.currentTarget);
+        setAnchorElNav(event.currentTarget);
+    };
+
+    const handleCloseNavMenu = () => {
+        console.log('closing');
+        setAnchorElNav(null);
+    };
+
+    
+  return (
+    <>
+    <CssBaseline/>
+    <AppBar position="static" sx={{ backgroundColor: "#333A3F" }}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left"
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left"
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "block", md: "none" }
+              }}
+            >
+              {pages.map(({title, path}) => (
+                <MenuItem key={title}
+                component={ActiveLink}
+                to={path} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{title}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {pages.map(({title, path}) => (
+              <Button
+              key={title}
+              component={ActiveLink}
+              to={path}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                {title}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+    
+    <Outlet />
+  </>);
+
 }
 
-const LINKS: { [key: string]: NavbarItems[] } = {
-    tools: [
-        {
-            name: "Contact List",
-            link: "/contacts/list/",
-        },
-        {
-            name: "FANS Browser",
-            link: "/fans/",
-        },
-        {
-            name: "Jira List",
-            link: "/jira/list/",
-        },
-        {
-            name: "Map Explorer",
-            link: "/map/",
-        },
-        {
-            name: "Mission Logs",
-            link: "/logs/",
-        },
-        {
-            name: "Orbit Decay",
-            link: `/orbitdecay/`,
-        },
-        {
-            name: "Payload Window List",
-            link: "/payload-windows/list/",
-        },
-    ],
-    resources: [
-        {
-            name: "Grafana",
-            link: "https://grafana.cloud.spire.com/",
-            external: true,
-        },
-        {
-            name: "Kibana",
-            link: "https://kibana.cloud.spire.com/",
-            external: true,
-        },
-        {
-            name: "SEA",
-            link: "https://sea.spire.sh/",
-            external: true,
-        },
-        {
-            name: "SRP",
-            link: "https://srp.spire.sh/",
-            external: true,
-        },
-        {
-            name: "The Knowledge",
-            link: "https://theknowledge.cloud.spire.com/admin/",
-            external: true,
-        },
-        {
-            name: "Unified Alerting",
-            link: "https://alert.cloud.spire.com/",
-            external: true,
-        },
-        {
-            name: "Zeppelin",
-            link: "http://zeppelin01.cloud.spire.com/#/",
-            external: true,
-        },
-    ],
-};
-
-const NavbarMenu: FC<{ title: string; items: NavbarItems[] }> = ({ title, items }) => {
-
-    const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
-    const { pathname } = useLocation();
-
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = (): void => {
-        setAnchorEl(null);
-    };
-
-    return (
-        <>
-            <div>
-                <Button onClick={handleClick}>
-                    {title}
-                </Button>
-            </div>
-            <Menu
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-                variant="selectedMenu"
-                style={{
-                    maxHeight: "80vh",
-                }}
-                anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "left",
-                }}
-                transformOrigin={{
-                    vertical: "top",
-                    horizontal: "left",
-                }}
-            >
-                {items.map(({ name, link, external = false }) => {
-                    const props = {
-                        component: external ? "a" : HistoryLink,
-                        ...(external ? { href: link, target: "_blank" } : {}),
-                        ...(!external ? { to: link } : {}),
-                    };
-
-                    return (
-                        <MenuItem
-                            key={`${name}-menu-item`}
-                            onClick={handleClose}
-                            {...props}
-                            selected={pathname === link}
-                        >
-                            {name}
-                            {external && <LaunchIcon style={{ height: "0.7em" }} />}
-                        </MenuItem>
-                    );
-                })}
-            </Menu>
-        </>
-    );
-};
-
-const Navbar: FC = () => {
-    const theme = useTheme();
-    const condensed = useMediaQuery(theme.breakpoints.down("lg"));
-
-    return (
-        <div>
-            <AppBar position="fixed">
-                <Toolbar>
-                    <div>
-                        <HistoryLink to="/">
-                            <img src="logo.png" alt="logo"/>
-                        </HistoryLink>
-                        <NavbarMenu title={!condensed ? "Tools" : "T"} items={LINKS.tools} />
-                        <NavbarMenu title={!condensed ? "Resources" : "R"} items={LINKS.resources} />
-                    </div>
-                </Toolbar>
-            </AppBar>
-        </div>
-    );
-};
-
-export default Navbar;
+export default Layout;
