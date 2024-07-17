@@ -25,10 +25,7 @@ const LandingPage: FC = () => {
                 }}
             >
                 <Typography variant="h5">
-                "If you want your children to be intelligent, read them fairy tales. If you want them to be more intelligent, read them more fairy tales."
-                </Typography>
-                <Typography variant="h6">
-                ~Albert Einstein
+                The world is a huge place. How will you know where you fit in unless you explore beyond your comfort zone? – Ernest Shackleton
                 </Typography>
             </Box>
         </Box>

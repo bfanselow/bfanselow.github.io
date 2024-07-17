@@ -5,10 +5,10 @@ import { CssBaseline } from "@mui/material";
 
 import Navbar from "./components/Navbar";
 import Endurance from "./pages/Endurance";
-import Software from "./pages/Software";
-import Photos from "./pages/Photos";
-import LandingPage from "./pages/LandingPage";
+import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import Photos from "./pages/Photos";
+import Software from "./pages/Software";
 
 const App: FC = () => {
   return (
@@ -17,7 +17,7 @@ const App: FC = () => {
           <BrowserRouter>
               <Routes>
                   <Route path="/" element={<Navbar />}>
-                      <Route index element={<LandingPage />} />
+                      <Route index element={<Home />} />
                       <Route path="endurance" element={<Endurance />} />
                       <Route path="software" element={<Software />} />
                       <Route path="photos" element={<Photos />} />

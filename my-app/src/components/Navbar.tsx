@@ -16,13 +16,15 @@ import styled from '@emotion/styled';
 
 const pages = [
     { title: "Home", path: "/" },
-    { title: "About", path: "/about" },
-    { title: "Contact", path: "/contact" },
+    { title: "Endurance", path: "/endurance" },
+    { title: "Software", path: "/software" },
+    { title: "Photos", path: "/photos" },
   ];
 
 
 const ActiveLink = styled(NavLink)({
     '&.active': {
+        height: "40px",
         fontWeight: "fontWeightBold",
         textDecoration: "underline",
     }
@@ -48,18 +50,9 @@ const Layout: FC = () => {
     <CssBaseline/>
     <AppBar position="static" sx={{ backgroundColor: "#333A3F" }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
+          <div />
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
