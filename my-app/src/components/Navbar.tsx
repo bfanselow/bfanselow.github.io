@@ -58,12 +58,12 @@ const Layout: FC = () => {
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
-                horizontal: "left"
+                horizontal: "right"
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
-                horizontal: "left"
+                horizontal: "right"
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
@@ -93,6 +93,7 @@ const Layout: FC = () => {
                 {title}
               </Button>
             ))}
+
           </Box>
         </Toolbar>
       </Container>

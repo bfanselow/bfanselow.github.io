@@ -4,7 +4,7 @@ import { Box, Card, CardMedia, Typography } from "@mui/material";
 const LandingPage: FC = () => {
 
     return (
-        <Card sx={{ width: "100vw", height: "100vh", backgroundColor: "#333A3F" }}>
+        <Card sx={{ width: "100vw", height: "100vh", backgroundColor: "#333A3F", borderRadius: 0 }}>
             <Box>
                 <CardMedia
                     sx={{ overflow: "hidden" }}
