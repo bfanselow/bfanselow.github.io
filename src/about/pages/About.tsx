@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import QueryWrapper from "../../core/components/QueryWrapper";
 import SettingsDrawer from "../../core/components/SettingsDrawer";
 import { useSettings } from "../../core/contexts/SettingsProvider";
-import AdminDrawer from "../components/AdminDrawer";
+import AboutDrawer from "../components/AboutDrawer";
 
 const AboutLayout = () => {
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -18,7 +18,7 @@ const AboutLayout = () => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <AdminDrawer
+      <AboutDrawer
         collapsed={collapsed}
         mobileOpen={open}
         onDrawerToggle={toggleDrawer}

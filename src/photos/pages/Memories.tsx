@@ -37,6 +37,7 @@ const photos: Array<Photo> = [
   { src: "/img/gallery-photos/memories/john-pilot.jpg", alt: "Your Captain, Mr. John Fanselow" },
   { src: "/img/gallery-photos/memories/33359-lyttle-dowdle-3.jpg", alt: "Wild Fox Wood - 33359 Lyttle Dowdle" },
   { src: "/img/gallery-photos/memories/jamie-jack-baking.jpg", alt: "Baking Preparations" },
+  { src: "/img/gallery-photos/memories/jack-dad-pond-2005.jpg", alt: "Jack & Dad at the Pond - 2005" },
 ];
 
 

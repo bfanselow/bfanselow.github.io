@@ -1,41 +1,29 @@
-import Box from "@material-ui/core/Box";
-import Toolbar from "@material-ui/core/Toolbar";
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
-import QueryWrapper from "../../core/components/QueryWrapper";
-import SettingsDrawer from "../../core/components/SettingsDrawer";
-import { useSettings } from "../../core/contexts/SettingsProvider";
-import AdminDrawer from "../components/AdminDrawer";
+import React from "react";
+import AdminAppBar from "../components/AdminAppBar";
+import AdminToolbar from "../components/AdminToolbar";
+import ToolbarWidget from "../components/ToolbarWidget";
+import { Grid, Typography } from "@material-ui/core";
 
-const SoftwareLayout = () => {
-  const [settingsOpen, setSettingsOpen] = useState(false);
-
-  const { collapsed, open, toggleDrawer } = useSettings();
-
-  const handleSettingsToggle = () => {
-    setSettingsOpen(!settingsOpen);
-  };
-
+const SoftwarePlayground = () => {
   return (
-    <Box sx={{ display: "flex" }}>
-      <AdminDrawer
-        collapsed={collapsed}
-        mobileOpen={open}
-        onDrawerToggle={toggleDrawer}
-        onSettingsToggle={handleSettingsToggle}
-      />
-      <SettingsDrawer
-        onDrawerToggle={handleSettingsToggle}
-        open={settingsOpen}
-      />
-      <Box component="main" sx={{ flexGrow: 1, pb: 3, px: { xs: 3, sm: 6 } }}>
-        <Toolbar />
-        <QueryWrapper>
-          <Outlet />
-        </QueryWrapper>
-      </Box>
-    </Box>
+    <React.Fragment>
+      <AdminAppBar>
+        <AdminToolbar title="Software Playground">
+          <ToolbarWidget />
+        </AdminToolbar>
+      </AdminAppBar>
+      <Grid container direction="column" spacing={2}>
+          <Grid item display="flex" justifyContent="center">
+            Playground Placeholder 
+        </Grid>
+        <Grid item>
+            <Typography variant="body2">
+                Placeholder 
+            </Typography>
+          </Grid>
+      </Grid>
+    </React.Fragment>
   );
 };
 
-export default SoftwareLayout;
+export default SoftwarePlayground;

@@ -12,6 +12,7 @@ const photos: Array<Photo> = [
   { src: "/img/gallery-photos/bill-rrr-midway-2010.jpg", alt: "Steamboat 50 Mile Mid-point" },
   { src: "/img/gallery-photos/bill-boulder-xc.2-2007.JPG", alt: "Boulder XC Masters Nationals - 2007" },
   { src: "/img/gallery-photos/bill-baldy.1-2006.jpg", alt: "Mt. Baldy Hillclimb - 2006" },
+  { src: "/img/gallery-photos/run/pearl-street-half-mile.jpg", alt: "Pearl Street Half Mile Warmup - 2009" },
   { src: "/img/gallery-photos/run/rim-rock-marathon-1.jpg", alt: "Rim Rock Marathon Descent - 2010" },
   { src: "/img/gallery-photos/bill-mt-tam.3-2007.bmp", alt: "Mt. Tam - 2007" },
   { src: "/img/gallery-photos/bill-boulder-xc.1-2007.JPG", alt: "Boulder XC Masters Nationals - 2007" },

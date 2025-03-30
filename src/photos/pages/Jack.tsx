@@ -11,6 +11,8 @@ const photos: Array<Photo> = [
   { src: "/img/gallery-photos/jack/rv-soccer-5-2020.jpg", alt: "RV Mustang Soccer - 2020" },
   { src: "/img/gallery-photos/jack-powderhorn-2024.jpg", alt: "Powderhorn MTB Race - 2020" },
   { src: "/img/mt-cb-jack.jpg", alt: "Jack at Mt Crested Butte" },
+  { src: "/img/gallery-photos/jack/gunny-river-plunge-2025.jpg", alt: "Gunnison River Frozen Plunge - 2025" },
+  { src: "/img/gallery-photos/jack/i-know-jack.jpg", alt: "With Wiley Cora at Jack's - 2022" },
   { src: "/img/gallery-photos/jack-blackhawk-2024.jpg", alt: "Racing at maryland Mountain - 2024" },
   { src: "/img/gallery-photos/jack/jack-stained-glass.jpg", alt: "Stained Glass" },
   { src: "/img/gallery-photos/jack/rv-soccer-3-2020.jpg", alt: "RV Mustang Soccer - 2020" },

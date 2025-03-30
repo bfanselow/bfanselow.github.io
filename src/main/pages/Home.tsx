@@ -20,7 +20,7 @@ const Home = () => {
                     sx={{
                         width: "45%",
                         position: "relative",
-                        bottom: 350,
+                        bottom: 400,
                         left: 100,
                         color: "black",
                     }}

@@ -19,6 +19,8 @@ const photos: Array<Photo> = [
   { src: "/img/gallery-photos/old-stage-mailbox.jpg", alt: "Olde Stage Road" },
   { src: "/img/gallery-photos/cb-cycling.3-2023.jpeg", alt: "Crested Butte MTB - 2023" },
   { src: "/img/gallery-photos/copper-2-aspen-2022.jpg", alt: "Copper to Aspen - 2022" },
+  { src: "/img/gallery-photos/bike/copper-to-aspen-hotel.jpg", alt: "Copper to Aspen Hotel Room - 2022" },
+  { src: "/img/gallery-photos/bike/lee-hill-shadow-2023.jpg", alt: "Afternoon Shadow on Lee Hill - 2023" },
   { src: "/img/gallery-photos/cb-cycling.4-2023.jpeg", alt: "Crested Butte MTB - 2023" },
   { src: "/img/gallery-photos/jamestown-stfd.jpg", alt: "Jamestown" },
   { src: "/img/gallery-photos/bike/rollins-pass-trellis.jpg", alt: "Rollins Pass Trellis" },

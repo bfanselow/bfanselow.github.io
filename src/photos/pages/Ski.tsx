@@ -22,6 +22,9 @@ const photos: Array<Photo> = [
   { src: "/img/gallery-photos/ski/40-shack-1.jpg", alt: "40 Shack, Winter Park" },
   { src: "/img/gallery-photos/ski/40-shack-2.jpg", alt: "40 Shack, Winter Park" },
   { src: "/img/gallery-photos/ski/40-shack-3.jpg", alt: "40 Shack, Winter Park" },
+  { src: "/img/gallery-photos/ski/dtr-2025.jpg", alt: "Devils Thumb Ranch - 2025" },
+  { src: "/img/gallery-photos/ski/abasin-steep-gullies-1.jpg", alt: "A-Basin Steep Gullies - 2018" },
+  { src: "/img/gallery-photos/ski/abasin-steep-gullies-2.jpg", alt: "A-Basin Steep Gullies - 2018" },
 ];
 
 
