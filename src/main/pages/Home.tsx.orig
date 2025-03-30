@@ -1,0 +1,30 @@
+import Grid from "@material-ui/core/Grid";
+import React from "react";
+import MainAppBar from "../components/MainAppBar";
+import MainToolbar from "../components/MainToolbar";
+import WelcomeWidget from "../widgets/WelcomeWidget";
+import { Divider, Tooltip } from "@material-ui/core";
+import BuildIcon from "@material-ui/icons/Build";
+
+const Home = () => {
+  const madeWith = "Made with:"
+  return (
+    <React.Fragment>
+      <MainAppBar>
+        <MainToolbar title="Bill Fanselow's Personal Site">
+          <Tooltip arrow title={madeWith} placement="bottom-start">
+               <BuildIcon /> 
+          </Tooltip>
+        </MainToolbar>
+      </MainAppBar>
+      <Divider />
+      <Grid container spacing={2} mt={4}>
+        <Grid item xs={12} md={6} lg={4}>
+          <WelcomeWidget />
+        </Grid>
+      </Grid>
+    </React.Fragment>
+  );
+};
+
+export default Home;

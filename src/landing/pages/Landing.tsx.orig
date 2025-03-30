@@ -1,0 +1,43 @@
+import LandingLayout from "../components/LandingLayout";
+import { Box, Card, CardMedia, Typography } from "@material-ui/core";
+
+const Landing = () => {
+
+  return (
+    <LandingLayout>
+      <main>
+      <Card square={true} >
+            <Box
+                sx={{ height: "88vh" }}
+            >
+                <CardMedia
+                    sx={{ overflow: "hidden", borderRadius: 0 }}
+                    component="img"
+                    height="100%"
+                    width="100%"
+                    image="img/cb_nordic.jpg"
+                />
+                <Box
+                    sx={{
+                        width: "40%",
+                        position: "relative",
+                        bottom: 140,
+                        left: 80,
+                        color: "black",
+                    }}
+                >
+                <Typography variant="h5">
+                The world is a huge place. How will you know where you fit in unless you explore beyond your comfort zone?
+                </Typography>
+                <Typography variant="h6">
+                    ~ Ernest Shackleton
+                </Typography>
+            </Box>
+        </Box>
+        </Card>
+      </main>
+    </LandingLayout>
+  );
+};
+
+export default Landing;

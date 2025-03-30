@@ -1,0 +1,79 @@
+import AppBar from "@material-ui/core/AppBar";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import Paper from "@material-ui/core/Paper";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import SettingsIcon from "@material-ui/icons/Settings";
+import React, { useState } from "react";
+import Footer from "../../core/components/Footer";
+import Logo from "../../core/components/Logo";
+import SettingsDrawer from "../../core/components/SettingsDrawer";
+import { Link as RouterLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useAuth } from "../../auth/contexts/AuthProvider";
+
+type LandingLayoutProps = {
+  children: React.ReactNode;
+};
+
+const TITLE = "Bill Fanselow"
+
+const LandingLayout = ({ children }: LandingLayoutProps) => {
+  const { userInfo } = useAuth();
+  const { t } = useTranslation();
+  const [settingsOpen, setSettingsOpen] = useState(false);
+
+  const handleSettingsToggle = () => {
+    setSettingsOpen(!settingsOpen);
+  };
+
+  return (
+    <Paper square sx={{ height: "100vh" }}>
+      <AppBar color="transparent" position="relative" sx={{ maxHeight: 70 }}>
+        <Toolbar variant="dense">
+          <Logo size={78} sx={{ mr: 1, mt: 1 }} />
+          <Typography variant="h4" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+            {TITLE}
+          </Typography>
+
+          {!userInfo && (
+            <Button
+              component={RouterLink}
+              to={`/${process.env.PUBLIC_URL}/login`}
+              variant="contained"
+              size="small"
+            >
+              {t("landing.cta.main")}
+            </Button>
+          )}
+          <Button
+              sx={{ marginLeft: 2 }}
+              component={RouterLink}
+              to={`/${process.env.PUBLIC_URL}/main`}
+              variant="outlined"
+              size="small"
+          >
+              {t("landing.cta.mainAuth", { name: userInfo ? userInfo.firstName : "Guest" })}
+          </Button>
+          <IconButton
+            color="default"
+            aria-label="settings"
+            component="span"
+            onClick={handleSettingsToggle}
+          >
+            <SettingsIcon />
+          </IconButton>
+          <SettingsDrawer
+            onDrawerToggle={handleSettingsToggle}
+            open={settingsOpen}
+          />
+        </Toolbar>
+      </AppBar>
+      <main>{children}</main>
+      <Footer />
+    </Paper>
+  );
+};
+
+export default LandingLayout;

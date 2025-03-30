@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "avatar": "",
+    "disabled": false,
+    "firstName": "Bill",
+    "lastName": "Fanselow",
+    "email": "bfanselow@gmail.com",
+    "gender": "M",
+    "role": "Admin"
+  },
+  {
+    "id": "2",
+    "avatar": "",
+    "disabled": false,
+    "email": "jfanselow14@gmail.com",
+    "firstName": "Jack",
+    "lastName": "Fanselow",
+    "gender": "M",
+    "role": "Member"
+  },
+  {
+    "id": "3",
+    "avatar": "",
+    "disabled": false,
+    "email": "jlfanselow@gmail.com",
+    "firstName": "Jamie",
+    "lastName": "Fanselow",
+    "gender": "F",
+    "role": "Member"
+  }
+]
