@@ -16,7 +16,7 @@ const Landing = () => {
     window.location.href = REDIRECT; // navigate the URL
   };
 
-    return (
+  return (
     <Paper square sx={{ backgroundColor: "#000", height: "100vh" }}>
       <Box
         display="flex"
@@ -25,16 +25,17 @@ const Landing = () => {
         alignItems="center"
         height="100%"
       >
-        <Card square>
-          <CardMedia
-            component="img"
-            image="img/robert-frost.png"
-            sx={{
-              width: "56%",
-              margin: "0 auto",
-            }}
-          />
-        </Card>
+        <Box
+          component="img"
+          src="img/robert-frost.png"
+          alt="Landing"
+          sx={{
+            width: "56%",
+            maxWidth: 500,
+            height: "auto",
+            display: "block",
+          }}
+        />
 
         <Button
           sx={{
@@ -44,13 +45,12 @@ const Landing = () => {
           }}
           onClick={handleClick}
           variant="contained"
-          size="medium"
         >
           Enter
         </Button>
       </Box>
     </Paper>
   );
- 
+
 };
 export default Landing;
