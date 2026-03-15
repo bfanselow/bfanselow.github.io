@@ -30,7 +30,7 @@ const Landing = () => {
           src="img/robert-frost.png"
           alt="Landing"
           sx={{
-            width: "56%",
+            width: "70%",
             maxWidth: 500,
             height: "auto",
             display: "block",
@@ -41,7 +41,7 @@ const Landing = () => {
           sx={{
             mt: 3,
             opacity: isVisible ? 1 : 0,
-            transition: "opacity 2s ease-in-out",
+            transition: "opacity 10s ease-in-out",
           }}
           onClick={handleClick}
           variant="contained"
