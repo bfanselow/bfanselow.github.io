@@ -5,6 +5,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import React, { useEffect, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
+const REDIRECT = "http://http://134.209.175.8/";
+
 type LandingLayoutProps = {
   children: React.ReactNode;
 };
@@ -15,6 +17,10 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleClick = () => {
+    window.location.href = REDIRECT;
+  };
 
   return (
     <Paper square sx={{ backgroundColor: "#000", height: "100vh" }}>
@@ -29,25 +35,13 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
               borderBottomColor: "#222" 
             }}
           >
-          <Typography variant="h4" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-              Welcome To Bill Fanselow's Personal Site 
-          </Typography>
           <Button
               sx={{ margin: 1 }}
-              component={RouterLink}
-              to={`/${process.env.PUBLIC_URL}/main`}
+              onClick={handleClick} 
               variant="contained"
               size="medium"
           >
-             Enter as Guest 
-          </Button>
-          <Button
-              component={RouterLink}
-              to={`/${process.env.PUBLIC_URL}/main`}
-              variant="outlined"
-              size="medium"
-          >
-             Login 
+             Enter
           </Button>
         </Toolbar>
       </AppBar>
