@@ -11,11 +11,11 @@ const Landing = () => {
         justifyContent="center"
         alignItems="center"
       >
-          <Card square={true} sx={{ height: "50vh" }}>
+          <Card square={true} sx={{ height: "80vh" }}>
                 <CardMedia
                     component="img"
-                    height="100%"
-                    width="100%"
+                    height="70%"
+                    width="70%"
                     image="img/robert-frost.png"
                 />
           </Card>
