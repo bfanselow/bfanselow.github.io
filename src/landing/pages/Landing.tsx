@@ -16,35 +16,41 @@ const Landing = () => {
     window.location.href = REDIRECT; // navigate the URL
   };
 
-  return (
+    return (
     <Paper square sx={{ backgroundColor: "#000", height: "100vh" }}>
       <Box
         display="flex"
+        flexDirection="column"
         justifyContent="center"
         alignItems="center"
+        height="100%"
       >
-          <Card square={true}>
-                <CardMedia
-                    component="img"
-                    height="70%"
-                    width="70%"
-                    image="img/robert-frost.png"
-                />
-          </Card>
+        <Card square>
+          <CardMedia
+            component="img"
+            image="img/robert-frost.png"
+            sx={{
+              width: "56%",
+              margin: "0 auto",
+            }}
+          />
+        </Card>
+
+        <Button
+          sx={{
+            mt: 3,
+            opacity: isVisible ? 1 : 0,
+            transition: "opacity 2s ease-in-out",
+          }}
+          onClick={handleClick}
+          variant="contained"
+          size="medium"
+        >
+          Enter
+        </Button>
       </Box>
-      <Button
-             sx={{
-              marginTop: 2,
-              opacity: isVisible ? 1: 0,
-              transition: "opacity 20s ease-in-out",
-              }}
-              onClick={handleClick} 
-              variant="contained"
-              size="medium"
-          >
-             Enter
-      </Button>
     </Paper>
   );
+ 
 };
 export default Landing;
