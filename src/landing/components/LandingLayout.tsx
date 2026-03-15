@@ -1,11 +1,10 @@
-import { Button, Typography } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
 import React, { useEffect, useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
 
-const REDIRECT = "http://http://134.209.175.8/";
+const REDIRECT = "http://134.209.175.8/";
 
 type LandingLayoutProps = {
   children: React.ReactNode;
@@ -19,7 +18,7 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
   }, []);
 
   const handleClick = () => {
-    window.location.href = REDIRECT;
+    window.location.href = REDIRECT; // navigate the URL
   };
 
   return (
@@ -31,8 +30,6 @@ const LandingLayout = ({ children }: LandingLayoutProps) => {
               marginTop: 2,
               opacity: isVisible ? 1: 0,
               transition: "opacity 20s ease-in-out",
-              borderBottom: "2px solid",
-              borderBottomColor: "#222" 
             }}
           >
           <Button

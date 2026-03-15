@@ -11,7 +11,7 @@ const Landing = () => {
         justifyContent="center"
         alignItems="center"
       >
-          <Card square={true} sx={{ height: "70vh" }}>
+          <Card square={true} sx={{ height: "50vh" }}>
                 <CardMedia
                     component="img"
                     height="100%"
